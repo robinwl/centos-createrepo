@@ -18,11 +18,14 @@ This project defines the rpm-metadata (repodata) format and maintains one of the
 	
 ## run with cron
 1. Create the file `/etc/cron.hourly/createrepo` and add the following:
+
         #!/bin/bash
         logger "Createrepo: started indexing"
         docker run -e verbose=true -v /srv/repo:/data sark/createrepo:latest
         logger "Createrepo: finished indexing"
+
 2. Add run premissions to cron-file:
+
         sudo chmod +x /etc/cron.hourly/createrepo
 
 License
