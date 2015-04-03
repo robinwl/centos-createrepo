@@ -15,7 +15,10 @@ This project defines the rpm-metadata (repodata) format and maintains one of the
 	
 ## run createrepo with verobe outout
 	docker run -e verbose=true -v /srv/repo:/data sark/createrepo:latest
-	
+
+## run with some other [flags](http://yum.baseurl.org/wiki/RepoCreate)
+	docker run -e verbose=true -e database=true -e update=true -e deltas=true -v /srv/repo:/data createrepo
+
 ## run with cron
 1. Create the file `/etc/cron.hourly/createrepo` and add the following:
 
@@ -31,3 +34,6 @@ This project defines the rpm-metadata (repodata) format and maintains one of the
 License
 ----
 MIT
+
+
+

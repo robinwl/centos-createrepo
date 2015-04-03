@@ -10,6 +10,18 @@ if [ "$1" = 'createrepo' ]; then
 		set -- "$@" --verbose
 	fi
 
+	if [ -n "$update" ] ; then
+		set -- "$@" --update
+	fi
+
+	if [ -n "$database" ] ; then
+		set -- "$@" --database
+	fi
+
+	if [ -n "$deltas" ] ; then
+		set -- "$@" --deltas
+	fi
+
 	set -- "$@" /data
 fi
 
