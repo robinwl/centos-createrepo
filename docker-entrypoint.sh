@@ -22,6 +22,10 @@ if [ "$1" = 'createrepo' ]; then
 		set -- "$@" --deltas
 	fi
 
+	if [ -n "$groupfile" ] ; then
+		set -- "$@" --groupfile="$groupfile"
+	fi
+
 	set -- "$@" /data
 fi
 
